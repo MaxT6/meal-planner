@@ -3,10 +3,12 @@ import { connect } from "react-redux";
 import React from 'react';
 import hero from '../images/meal-hero.jpg';
 import { RxMagnifyingGlass } from 'react-icons/rx';
+import { useNavigate } from "react-router-dom";
 // import { HiMagnifyingGlass } from 'react-icons/hi2';
 
 const Hero = (props) => {
   // console.log(props)
+  
 
   const onInputChange = evt => {
     props.searchStateFunction.meal = evt.target.value
@@ -15,9 +17,11 @@ const Hero = (props) => {
     // console.log("props.searchStateFunction.meal", props.searchStateFunction.meal)
 }
 
+const navigate = useNavigate();
 const onSubmit = evt => {
     evt.preventDefault();
-    props.fetchMeal(props.searchStateFunction.meal)
+    props.fetchMeal(props.searchStateFunction.meal);
+    navigate('/meals');
 }
 
   return (
