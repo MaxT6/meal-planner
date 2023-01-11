@@ -1,9 +1,25 @@
+import * as actionCreators from "../state/action-creators";
+import { connect } from "react-redux";
 import React from 'react';
 import hero from '../images/meal-hero.jpg';
 import { RxMagnifyingGlass } from 'react-icons/rx';
 // import { HiMagnifyingGlass } from 'react-icons/hi2';
 
-const Hero = () => {
+const Hero = (props) => {
+  // console.log(props)
+
+  const onInputChange = evt => {
+    props.searchStateFunction.meal = evt.target.value
+    // props.inputChange(props.searchStateFunction.meal) //IS THIS NEEDED? Seems to work without it. 
+    // console.log("evt.target.value", evt.target.value)
+    // console.log("props.searchStateFunction.meal", props.searchStateFunction.meal)
+}
+
+const onSubmit = evt => {
+    evt.preventDefault();
+    props.fetchMeal(props.searchStateFunction.meal)
+}
+
   return (
     <div className='w-full h-screen'>
       <img className='top-0 left-0 w-full h-screen object-cover' src={hero} alt="Tagline with food as the backdrop" />
@@ -18,14 +34,23 @@ const Hero = () => {
               placeholder='search'
               type="text"/>
             </div> */}
-            <label className="relative block">
+            <form 
+              id="form" 
+              onSubmit={onSubmit}
+              className="relative block">
               <span className="sr-only">Search</span>
               <span className="absolute inset-y-0 left-0 flex items-center pl-2">
                 {/* <svg className="h-5 w-5 fill-black-300" viewBox="0 0 20 20">{RxMagnifyingGlass}</svg> */}
                 <RxMagnifyingGlass className="h-8 w-8 text-slate-500 fill-slate-300" viewBox="0 -2 20 20" /> {/* Viewbox adjust icon placement in bar */}
               </span>
-              <input className=" w-3/5 placeholder:italic placeholder:text-slate-400 block bg-white border border-slate-300 rounded-full py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for a meal..." type="text" name="search"/>
-            </label>
+              <input 
+                id="mealSearch" 
+                onChange={onInputChange}
+                className=" w-3/5 placeholder:italic placeholder:text-slate-400 block bg-white border border-slate-300 rounded-full py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" 
+                placeholder="Search for a meal..." 
+                type="text" 
+                name="search"/>
+            </form>
           </div>
         </div>
       </div>
@@ -34,4 +59,4 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export default connect(st => st, actionCreators)(Hero)
