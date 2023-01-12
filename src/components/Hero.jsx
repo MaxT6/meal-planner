@@ -28,8 +28,8 @@ const onSubmit = evt => {
     <div className='w-full h-screen'>
       <img className='top-0 left-0 w-full h-screen object-cover' src={hero} alt="Tagline with food as the backdrop" />
       <div className='bg-black/10 absolute top-0 left-0 w-full h-screen'> {/* adds a transparent shade of black overlaying image */}
-      <div className='flex justify-center mt-5 w-[89%] ml-5 lg:ml-0'>
-      <h2 className='font-bold text-slate-500 text-5xl md:text-5xl lg:text-5xl drop-shadow-2xl'> Fude: Meals for Dudes</h2>
+      <div className='flex justify-center mt-5 w-[87%] ml-5 lg:ml-0'>
+      <h2 className='font-bold text-slate-500 text-5xl md:text-5xl lg:text-5xl drop-shadow-2xl'> Fudes: Meals for Dudes</h2>
       </div>
         <div className='absolute top-0 w-full h-full flex flex-col justify-center text-black'>
           <div className='mt-5 left -[2%] md:left-[15.5%] lg:left-[29.5%] max-w-[1100px] m-auto absolute p-4'>
