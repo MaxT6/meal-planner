@@ -28,10 +28,13 @@ const onSubmit = evt => {
     <div className='w-full h-screen'>
       <img className='top-0 left-0 w-full h-screen object-cover' src={hero} alt="Tagline with food as the backdrop" />
       <div className='bg-black/10 absolute top-0 left-0 w-full h-screen'> {/* adds a transparent shade of black overlaying image */}
+      <div className='flex justify-center mt-5 w-[89%] ml-5 lg:ml-0'>
+      <h2 className='font-bold text-slate-500 text-5xl md:text-5xl lg:text-5xl drop-shadow-2xl'> Fude: Meals for Dudes</h2>
+      </div>
         <div className='absolute top-0 w-full h-full flex flex-col justify-center text-black'>
           <div className='mt-5 left -[2%] md:left-[15.5%] lg:left-[29.5%] max-w-[1100px] m-auto absolute p-4'>
-            <p className='font-bold text-white text-5xl md:text-7xl lg:text-8xl drop-shadow-2xl'>Plan Meals </p>
-            <h1 className='md:mb-2.5 font-bold text-3xl md:text-6xl lg:text-6xl drop-shadow-2xl w-10/12 md:w-8/12 lg:w-7/12 mb-2'>So your signficant other believes you are good at this</h1>
+            <h1 className='font-bold text-white text-5xl md:text-7xl lg:text-8xl drop-shadow-2xl'>Plan Meals </h1>
+            <p className='md:mb-2.5 font-bold text-3xl md:text-6xl lg:text-6xl drop-shadow-2xl w-10/12 md:w-8/12 lg:w-7/12 mb-2'>So your signficant other believes you are good at this</p>
             {/* <div>
               <input 
               className='absolute placeholder:italic placeholder:text-slate-500 block bg-white w-6/12 border border-slate-300 rounded-full py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm'
