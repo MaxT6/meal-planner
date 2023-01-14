@@ -10,17 +10,17 @@ export const resetForm = () => {
 };
 
 
-export const fetchMeal = (number, tags, meal) => {
+export const fetchMeal = (meal) => {
   console.log(" NEW MEAL:", meal)
 
  return function (dispatch) {
   const options = {
     method: 'GET',
-    url: 'https://tasty.p.rapidapi.com/recipes/list',
-    params: {from: '0', size: number, tags: tags, q: meal},
+    url: 'https://edamam-recipe-search.p.rapidapi.com/search',
+    params: {q: meal},
     headers: {
       'X-RapidAPI-Key': 'cdbaf912cemsh15bcc1402bbea59p1ab744jsn58909e0ad7ce',
-      'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
+      'X-RapidAPI-Host': 'edamam-recipe-search.p.rapidapi.com'
     }
   };
   axios.request(options).then(function (response) {

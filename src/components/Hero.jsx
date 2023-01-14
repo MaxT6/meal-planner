@@ -20,7 +20,7 @@ const Hero = (props) => {
 const navigate = useNavigate();
 const onSubmit = evt => {
     evt.preventDefault();
-    props.fetchMeal("20", null , props.searchStateFunction.meal);
+    props.fetchMeal(props.searchStateFunction.meal);
     navigate('/meals');
 }
 
