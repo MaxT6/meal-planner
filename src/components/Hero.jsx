@@ -26,7 +26,7 @@ const onSubmit = evt => {
 
   return (
     <div className='w-full h-screen'>
-      <img className='top-0 left-0 w-full h-screen object-fill' src={hero} alt="Tagline with food as the backdrop" />
+      <img className='top-0 left-0 w-full h-screen object-cover' src={hero} alt="Tagline with food as the backdrop" />
       <div className='bg-black/10 absolute top-0 left-0 w-full h-screen'> {/* adds a transparent shade of black overlaying image */}
       <div className='flex justify-center mt-5 w-[87%] ml-5 lg:ml-0'>
       <h2 className='font-bold text-slate-500 text-5xl md:text-5xl lg:text-5xl drop-shadow-2xl'> Fudes: Meals for Dudes</h2>
