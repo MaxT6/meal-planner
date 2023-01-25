@@ -24,7 +24,7 @@ export const fetchMeal = (meal) => {
     }
   };
   axios.request(options).then(function (response) {
-    console.log("response data", response.data);
+    // console.log("response data", response.data);
     dispatch({
       type: types.SHOW_MEAL,
       payload: response.data
